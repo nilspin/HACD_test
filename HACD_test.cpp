@@ -69,6 +69,17 @@ int main()
 
 	CircularList<TMMTriangle>* triList = &computedMesh->GetTriangles();
 	
+	CircularListElement<TMMTriangle>*triListElement = triList->GetHead();
+	TMMTriangle* tri = &triListElement->GetData();
+	TMMVertex* v0 = tri->GetTriangle0();
+	TMMVertex* v1 = tri->GetTriangle1();
+	TMMVertex* v2 = tri->GetTriangle2();
+
+	cout << "1st triangle is made up of verts " << endl;
+	cout << v0->GetVertex().X() << ", " << v0->GetVertex().Y() << ", " << v0->GetVertex().Z() << endl;
+	cout << v1->GetVertex().X() << ", " << v1->GetVertex().Y() << ", " << v1->GetVertex().Z() << endl;
+	cout << v2->GetVertex().X() << ", " << v2->GetVertex().Y() << ", " << v2->GetVertex().Z() << endl;
+
 	int VertexSize = vertexList->GetSize();
 	
 	for (int i = 0; i < VertexSize; i++)
